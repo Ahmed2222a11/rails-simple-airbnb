@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ .card-body i {
+  margin-right: 7px;
+}
+
+/* .d-flex .pp {
+  margin-right: 280px;
+} */

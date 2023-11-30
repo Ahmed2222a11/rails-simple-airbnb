@@ -1,0 +1,26 @@
+<% count = @flats.length %>
+
+<div class="container">
+  <h1>My flats(<%= count %>)</h1>
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="<%= flat.image_url %>" class="card-img-top" alt="Flat Image">
+          <div class="card-body">
+            <h4 class="card-title"><strong><%= link_to flat.name, flat_path(flat) %></strong></h4>
+            <p><%= flat.address %></p>
+            <div class="d-flex justify-content-start">
+              <p><%= flat.price_per_night %> <i class="fa-solid fa-euro-sign"></i> </p>
+              <p><%= flat.number_of_guests %> <i class="fa-solid fa-user fa-spin-pulse pp"></i></p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Add new", new_flat_path, class: "btn btn-primary" %>
+</div>

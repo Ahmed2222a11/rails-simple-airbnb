@@ -1,0 +1,14 @@
+<h1>Edit flat</h1>
+<%= form_with model: @flat do |t| %>
+  <%= t.label :name %>
+  <%= t.text_field :name %>
+  <%= t.label :address %>
+  <%= t.text_field :address %>
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+  <%= t.label :price_per_night %>
+  <%= t.text_field :price_per_night %>
+  <%= t.label :number_of_guests %>
+  <%= t.text_field :number_of_guests %>
+  <%= t.submit %>
+<% end %>
